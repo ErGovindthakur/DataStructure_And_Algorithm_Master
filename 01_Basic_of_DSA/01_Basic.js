@@ -22,3 +22,30 @@ let num = 12;
 let string = "12";
 console.log(num+string); // 1212 Here concatenation is occurring
 
+// Below the three console are working differently
+console.log("Here is the sum of two number = "+ num1+num2);
+console.log("Here is the sum of two number = ", num1+num2);
+console.log("Here is the sum of two number = "+ (num1+num2));
+
+// Type Coercion (Bcz of type coercion js do some calculation according to operators automatically)
+
+console.log("12"+12); // concatenation is working
+console.log(12+12); // occurring normal addition
+
+console.log("12"-12); // bcz of type coercion js automatically convert string into number and subtract them
+
+console.log("12"*12);
+console.log("12"/12);
+
+// process.stdout.print("Hello");
+// process.stdout.print("Govind");
+
+// Type Casting => Converting one data type into another one called type casting 
+
+let age = "21";
+let ageInNum = Number(age);
+console.log(typeof age);
+console.log(typeof ageInNum);
+
+let ageInString = String(ageInNum);
+console.log(typeof ageInString);
