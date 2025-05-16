@@ -63,7 +63,7 @@ if(unit>100){
 }
 if(amount>0){
      extra = unit - 100;
-     amount += extra * 4;
+     amount += extra * 4.2;
      unit = unit - extra;
 }
 console.log(`unit = ${unit}, amount = ${amount}, extra = ${extra}`);
