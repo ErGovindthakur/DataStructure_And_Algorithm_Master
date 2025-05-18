@@ -1,4 +1,4 @@
-// Solving the problem of INR Denomination problem
+// Solving the problem of INR Denomination problem using greedy approach
 
 let amountInIndianRupee = 48735;
 
