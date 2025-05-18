@@ -51,19 +51,18 @@ if(unit > 400){
      amount += extra * 13;
      unit = unit - extra;
 }
-if(unit > 200){
+if(unit > 200 && unit <= 400){
      extra = unit - 200;
      amount += extra * 8;
      unit = unit - extra;
 }
-if(unit>100){
+if(unit>100 && unit <= 200){
      extra = unit - 100;
-     amount += unit * 6;
+     amount += extra * 6;
      unit = unit - extra;
 }
-if(amount>0){
-     extra = unit - 100;
-     amount += extra * 4.2;
-     unit = unit - extra;
+if(unit > 0 && unit <= 100){
+     amount += unit * 4.2;
+
 }
-console.log(`unit = ${unit}, amount = ${amount}, extra = ${extra}`);
+console.log(`amount = ${amount}`);
