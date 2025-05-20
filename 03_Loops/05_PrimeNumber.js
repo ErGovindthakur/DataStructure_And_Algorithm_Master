@@ -40,16 +40,33 @@ As numbers get larger, primes get less frequent. But surprisingly, sometimes you
 
 let findPrime = (num) => {
      num = Number(num);
-     let isPrime = true;
+     // let isPrime = true;
 
      if(isNaN(num) || num<=0) return "Enter a valid number must be greater than zero";
 
-     for(let i = 2; i<=Math.floor(num/2); i++){
-          if(num%i==0){
-               isPrime = false;
-          }
+     // for(let i = 2; i<=Math.floor(num/2); i++){
+     //      if(num%i==0){
+     //           isPrime = false;
+     //      }
+     // }
+     if(num > 0){
+         let isPrime =  primeNum(num);
+         return isPrime;
      }
-     return isPrime
+
+     // return isPrime
 }
 
-console.log(findPrime(9));
+// optimize the code by a function
+let primeNum = (n) => {
+     n = Number(n);
+     if(n <= 1) return false; // one is not a prime number
+     if(n === 2) return true; // 2 is only even prime number
+     if(n % 2 === 0) return false;
+
+     for(let i = 3; i<Math.floor(Math.sqrt(n)); i+=2){
+          if(n%i === 0) return false;
+     }
+     return true;
+}
+console.log(findPrime(11));
