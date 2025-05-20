@@ -9,12 +9,15 @@ let sumOfGivenNaturalNum = (num) => {
     if (num <= 0) {
       return "Number should be positive and greater than zero";
     } else {
-      for (let i = 1; i <= num; i++) {
-        sum += i;
-      }
+      // for (let i = 1; i <= num; i++) {
+      //   sum += i;
+      // }
+      
+      // By using Mathematical formula
+      sum = (num * (num+1))/2;
     }
   }
   return `Sum of ${num} natural number = ${sum}`;
 };
 
-console.log(sumOfGivenNaturalNum("abc"));
+console.log(sumOfGivenNaturalNum("9"));
