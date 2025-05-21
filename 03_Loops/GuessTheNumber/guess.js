@@ -26,3 +26,20 @@ const checkNum = () => {
     }
   }
 };
+
+let helloInput = document.querySelector("#helloInput");
+
+const repeatHello = () => {
+  let greetData = prompt("Enter the greet value as same as helloInput");
+
+  while(helloInput.value !== greetData){
+    if(helloInput.value === greetData){
+      alert("hi, Hello");
+      break;
+    }else{
+      alert("try again");
+      greetData = prompt("Enter the greet Hi to exit");
+      continue;
+    }
+  }
+}
