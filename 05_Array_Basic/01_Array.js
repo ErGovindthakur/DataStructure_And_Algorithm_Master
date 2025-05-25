@@ -40,7 +40,7 @@ console.log(array);
 // removing an element from an array
 array.pop(6);
 
-console.log(array)
+console.log(array);
 // 1. Note -> An array always starts with zero index.
 // 2. Note -> In js array is a dynamic and linear data structure which stores data in continuous manner
 
