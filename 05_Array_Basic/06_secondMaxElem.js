@@ -1,6 +1,6 @@
 // Find 3nd max element into an array
 
-let arr = [1,4,7,3,9,6,10];
+let arr = [1,4,7,3,9,6,10,10,10];
 
 // Defining max and sMax
 
@@ -13,7 +13,7 @@ for(let i=2; i<arr.length; i++){
      if(arr[i]>max){
           sMax = max;
           max = arr[i];
-     }else if(arr[i]>sMax){
+     }else if(arr[i]>sMax && max!=arr[i]){
           sMax = arr[i];
      }
 };
