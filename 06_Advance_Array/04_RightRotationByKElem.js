@@ -1,5 +1,5 @@
 // Rotating elem of array right using k element
-
+// TMC = O(n)
 let RightRotationByKElem = (arr, k) => {
   k = Math.floor(k % arr.length);
   for (let i = 1; i <= k; i++) {
