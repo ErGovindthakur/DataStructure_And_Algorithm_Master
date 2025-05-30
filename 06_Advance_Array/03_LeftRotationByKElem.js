@@ -28,8 +28,8 @@ let leftRotationByKElem2 = (i,j) => {
   }
 
 };
-leftRotationByKElem2(0,k-1);
-leftRotationByKElem2(k,arr.length-1);
-leftRotationByKElem2(0,arr.length-1);
+leftRotationByKElem2(0,k-1); // index 0 to index k(2)-1 => Reverse
+leftRotationByKElem2(k,arr.length-1); // index k(2) to last index => reverse
+leftRotationByKElem2(0,arr.length-1); // index 0 to last index reverse
 
 console.log(arr);
