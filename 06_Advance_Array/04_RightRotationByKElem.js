@@ -12,4 +12,37 @@ let RightRotationByKElem = (arr, k) => {
   return arr;
 };
 
-console.log(RightRotationByKElem([1, 2, 3, 4, 5], 4));
+// console.log(RightRotationByKElem([1, 2, 3, 4, 5], 4));
+
+// Right rotation by k element using second method
+
+let k = 2;
+let arr = [1,2,3,4,5];
+let RightRotationByKElem2 = (i,j) => {
+  k = Math.floor(k%arr.length);
+
+  while(i<j){
+    let temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+    i++;
+    j--;
+  }
+  return arr;
+}
+
+// for left rotation
+/*
+RightRotationByKElem2(0,k-1);
+RightRotationByKElem2(k,arr.length-1);
+RightRotationByKElem2(0,arr.length-1); // Analyze pattern here
+console.log(arr);
+*/
+
+
+// For right rotation
+RightRotationByKElem2(0,arr.length-1); // Analyze pattern here
+RightRotationByKElem2(0,k-1);
+RightRotationByKElem2(k,arr.length-1);
+console.log(arr);
+
