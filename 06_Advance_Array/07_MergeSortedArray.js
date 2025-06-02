@@ -10,17 +10,24 @@ let MergeTwoSortedArray = (arr1,arr2) => {
 
      let mergeArr = new Array(arr1.length-1 + arr2.length-1);
      
-     while(i<arr1[i] && j<arr2[j]){
+     while(i<arr1.length && j<arr2.length){
           if(arr1[i]<arr2[j]){
-               mergeArr[k] = arr1[i];
-               i++;
-               k++;
+               mergeArr[k++] = arr1[i++];
+
           }else{
-               mergeArr[k] = arr2[j];
-               j++;
-               k++;
+               mergeArr[k++] = arr2[j++];
           }
      }
+
+     // Writing condition for if arr1's length is greater than arr2's length
+
+     while(i<arr1.length){
+          mergeArr[k++] = arr1[i++];
+     }
+     while(j<arr2.length){
+          mergeArr[k++] = arr1[j++]
+     }
+
      return mergeArr;
 }
-console.log(MergeTwoSortedArray([2,5,8],[1,4,7,9]));
+console.log(MergeTwoSortedArray([1,4,7,9,10],[2,5,8]));
