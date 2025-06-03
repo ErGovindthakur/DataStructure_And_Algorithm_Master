@@ -8,7 +8,7 @@ let MergeTwoSortedArray = (arr1,arr2) => {
 
      // creating a merge array
 
-     let mergeArr = new Array(arr1.length-1 + arr2.length-1);
+     let mergeArr = new Array(arr1.length + arr2.length);
      
      while(i<arr1.length && j<arr2.length){
           if(arr1[i]<arr2[j]){
