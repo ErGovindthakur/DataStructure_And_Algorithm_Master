@@ -1,4 +1,4 @@
-// Find 3nd max element into an array
+// Find 2nd max element into an array
 
 let arr = [1,4,7,3,9,6,10,10,10];
 
