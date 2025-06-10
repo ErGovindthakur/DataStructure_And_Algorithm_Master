@@ -33,4 +33,4 @@ let findTheMajorityElem = (arr) => {
     }
 };
 
-console.log(findTheMajorityElem([2,2,1,1,1,2,2,1,1,5,1]));
+console.log(findTheMajorityElem([3,2,3]));
