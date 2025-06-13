@@ -4,6 +4,7 @@ let findFactorial = (num) => {
      let fact = 1;
      num = Number(num);
 
+     // Regular brute force approach
      // if(isNaN(num)){
      //      return "Enter a valid input";
      // }else{
@@ -25,4 +26,6 @@ let findFactorial = (num) => {
      return `The factorial of Given num = ${fact}`;
 };
 
+
+// TMC => O(n) and SPC => O(1)
 console.log(findFactorial(7));

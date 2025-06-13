@@ -30,3 +30,5 @@ let findStrong = (strongNum) => {
 }
 
 console.log(findStrong(145));
+
+// TMC => O(logN) or O(d) , and SPC => O(1)
