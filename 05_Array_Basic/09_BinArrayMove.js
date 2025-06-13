@@ -16,3 +16,5 @@ while(i<binArray.length){
 };
 
 console.log(binArray);
+
+// TMC => O(n) and SPC => O(1)

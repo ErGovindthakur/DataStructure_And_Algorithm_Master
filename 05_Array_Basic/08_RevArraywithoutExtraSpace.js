@@ -6,11 +6,16 @@ let end = arr.length-1;
 
 
 while(start<end){
-     let temp = arr[start];
-     arr[start] = arr[end];
-     arr[end] = temp;
+     // let temp = arr[start];
+     // arr[start] = arr[end];
+     // arr[end] = temp;
+     // start++;
+     // end--;
+     [arr[start],arr[end]] = [arr[end],arr[start]];
      start++;
      end--;
 };
 
 console.log(arr);
+
+// TMC => O(n) and SPC => O(1)
