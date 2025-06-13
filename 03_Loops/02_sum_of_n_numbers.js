@@ -21,3 +21,5 @@ let sumOfGivenNaturalNum = (num) => {
 };
 
 console.log(sumOfGivenNaturalNum("9"));
+
+// TMC and SPC => O(1)
