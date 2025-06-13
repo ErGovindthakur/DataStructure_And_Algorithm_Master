@@ -12,7 +12,7 @@ let leftRotationByKElem1 = (arr, k) => {
   }
   return arr;
 };
-
+// TMC => O(n^2) and SPC => O(1)
 // console.log(leftRotationByKElem1([1, 2, 3, 4, 5], 2));
 
 let arr = [1,2,3,4,5];
@@ -33,3 +33,5 @@ leftRotationByKElem2(k,arr.length-1); // index k(2) to last index => reverse
 leftRotationByKElem2(0,arr.length-1); // index 0 to last index reverse
 
 console.log(arr);
+
+// TMC => O(n) and SPC => O(1)

@@ -11,7 +11,7 @@ let RightRotationByKElem = (arr, k) => {
   }
   return arr;
 };
-
+// TMC => O(n^2) and SPC => O(1)
 // console.log(RightRotationByKElem([1, 2, 3, 4, 5], 4));
 
 // Right rotation by k element using second method
@@ -45,4 +45,6 @@ RightRotationByKElem2(0,arr.length-1); // Analyze pattern here
 RightRotationByKElem2(0,k-1);
 RightRotationByKElem2(k,arr.length-1);
 console.log(arr);
+
+// // TMC => O(n) and SPC => O(1)
 

@@ -12,3 +12,5 @@ let RemoveDuplicate = (arr) => {
 }
 
 console.log(RemoveDuplicate([0,0,1,1,1,2,2,3,3,4,5]));
+
+// // TMC => O(n) and SPC => O(1)
