@@ -9,4 +9,4 @@ while(myDigit>0){
 }
 console.log("sumOfDigit ", sumOfDigit);
 
-// TMC => O(n) and SPC => O(1)
+// TMC => O(logN) and SPC => O(1)
