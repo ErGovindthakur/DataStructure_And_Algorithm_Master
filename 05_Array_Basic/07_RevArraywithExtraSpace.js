@@ -8,3 +8,5 @@ for(let i = arr.length-1; i>=0; i--){
      j++;
 };
 console.log(revArray);
+
+// TMC => O(n) and SPC => O(n)
