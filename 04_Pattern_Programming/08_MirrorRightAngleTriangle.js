@@ -18,3 +18,4 @@ for(let i = 1; i<=space; i++){
 
      console.log()
 }
+// TMC => O(n^2) and SPC => O(1)

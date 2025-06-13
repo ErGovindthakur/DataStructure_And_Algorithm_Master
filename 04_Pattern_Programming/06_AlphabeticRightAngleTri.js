@@ -19,3 +19,5 @@ for(let i = 1; i<=stars; i++){
 // Note => 
 // Remember this one to convert ascii num to alphabet 
 // (String.fromCharCode(ascii))
+
+// TMC => O(n^2) and SPC => O(1)

@@ -13,3 +13,5 @@ for(let row = 1; row<=star; row++){
      }
      console.log();
 }
+
+// TMC => O(n^2) and SPC => O(1)
