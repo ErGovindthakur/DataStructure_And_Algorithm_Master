@@ -8,3 +8,5 @@ while(myDigit>0){
      myDigit = Math.floor(myDigit/10);
 }
 console.log("sumOfDigit ", sumOfDigit);
+
+// Here Tmc => O(n) and Spc => O(1)
