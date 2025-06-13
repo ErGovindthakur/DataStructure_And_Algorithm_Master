@@ -15,3 +15,5 @@ let findRightRotationByOne = (arr) => {
 }
 
 console.log(findRightRotationByOne([1,2,3,4,5]));
+
+// TMC => O(n) and SPC => O(1)
