@@ -29,3 +29,5 @@ let printNum = (givenNum) => {
      }
 };
 printNum(9);
+
+// TMC => O(n)
