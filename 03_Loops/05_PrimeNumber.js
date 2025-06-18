@@ -70,3 +70,6 @@ let primeNum = (n) => {
      return true;
 }
 console.log(findPrime(11));
+
+// 1. TMC => O(n)
+// 2. TMC => O(root n)

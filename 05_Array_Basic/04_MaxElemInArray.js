@@ -11,3 +11,5 @@ for(let i=1; i<arr.length; i++){ // here starting traversal from 1st index;
 };
 
 console.log(`The max element is ${max}`);
+
+// TMC = O(n) and SPC => O(1)

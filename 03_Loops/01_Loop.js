@@ -20,6 +20,8 @@ for(start; condition(end); change(iteration,(increment, decrement))){
 
 for(let i = 1; i<=3; i++){
      console.log("Govinda"); // here using one line (console.log("Govinda"))
+
+     // TMC => O(n) and SPC => O(1)
 }
 
 // Note -: Loops play very important role in software application
@@ -29,10 +31,12 @@ for(let i = 1; i<=3; i++){
 // Print 1 to 22
 for(let i = 1; i<=22; i++){
   console.log(i);
+  // TMC => O(n) and SPC => O(1)
 }
 // Print 22 to 1
 for(let i = 22; i>=1; i--){
   console.log(i);
+   // TMC => O(n) and SPC => O(1)
 }
 
 // valid loop structure

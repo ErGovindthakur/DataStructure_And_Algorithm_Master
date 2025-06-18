@@ -9,12 +9,19 @@ let findFactors = (num) => {
 
      if(isNaN(num) || num<=0) return "Enter a valid num must be greater than zero";
 
-     for(let i=0; i<=Math.floor(num/2); i++){
+     // for(let i=0; i<=Math.floor(num/2); i++){
+     //      if(num%i === 0){
+     //           console.log(i);
+     //           // TMC => O(n) and SPC => O(1)
+     //      }
+     // }
+     for(let i=1; i<=Math.floor(num/2); i++){
           if(num%i === 0){
                console.log(i);
+               // TMC => O(Root n) and SPC => O(1)
           }
      }
-     console.log(num);
+     return `The actual num => ${num}`;
 };
 
-console.log(findFactors(5));
+console.log(findFactors(6));

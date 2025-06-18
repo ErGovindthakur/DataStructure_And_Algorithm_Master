@@ -11,7 +11,7 @@ let sMax = Math.min(arr[0],arr[1]);
 
 for(let i=2; i<arr.length; i++){
      if(arr[i]>max){
-          sMax = max;
+          sMax = max; // let me know why this
           max = arr[i];
      }else if(arr[i]>sMax && max!=arr[i]){
           sMax = arr[i];
@@ -19,3 +19,5 @@ for(let i=2; i<arr.length; i++){
 };
 
 console.log(`The second max element in array = ${sMax}`);
+
+// TMC => O(n) and SPC => O(1)

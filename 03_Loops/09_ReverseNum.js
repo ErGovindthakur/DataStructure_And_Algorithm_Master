@@ -5,9 +5,9 @@
 let reverseNum = (givenNum) => {
      givenNum = Number(givenNum);
      let revNum = 0;
-     if(givenNum<0 || isNaN(givenNum)) return "Enter a valid num must be greater than zero";
+     if( isNaN(givenNum) || givenNum < 0 ) return "Enter a valid num must be greater than zero";
 
-     while(givenNum > 0){
+     while(givenNum !== 0){
           let rem = givenNum%10;
           revNum = (revNum*10)+rem;
           givenNum = Math.floor(givenNum/10);
@@ -16,3 +16,5 @@ let reverseNum = (givenNum) => {
 }
 
 console.log(reverseNum("123"));
+
+// TMC => O(logN) and SPC => O(1)

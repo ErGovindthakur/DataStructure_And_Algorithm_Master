@@ -10,3 +10,5 @@ for(let i = 0; i<arr.length; i++){
 }
 
 console.log(`The sum of an array elements = ${sum}`);
+
+// TMC => O(n) and SPC => O(1)

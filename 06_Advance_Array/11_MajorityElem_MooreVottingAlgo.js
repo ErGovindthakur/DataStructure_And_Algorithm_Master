@@ -34,3 +34,5 @@ let findTheMajorityElem = (arr) => {
 };
 
 console.log(findTheMajorityElem([3,2,3]));
+
+// TMC => O(n) and SPC => O(1)

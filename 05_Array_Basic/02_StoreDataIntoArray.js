@@ -9,3 +9,5 @@ for(let i = 0; i<=4; i++){
      store[i] = Number(prompt("Enter your values -: "));
 };
 console.log(store);
+
+// TMC => O(n) and SPC => O(n)

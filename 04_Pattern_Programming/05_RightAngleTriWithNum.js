@@ -10,3 +10,4 @@ for(let i = 1; i<=stars; i++){
      }
      console.log();
 }
+// TMC => O(n^2) and SPC => O(1)

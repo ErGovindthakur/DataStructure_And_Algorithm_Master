@@ -21,3 +21,5 @@ let findMaxSubArray = (arr) => {
 };
 
 console.log(findMaxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
+
+// TMC => O(n) and SPC => O(1)
