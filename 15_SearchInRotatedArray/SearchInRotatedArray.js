@@ -11,6 +11,13 @@ let searchInRotatedArray = (arr, target) => {
 
     if (arr[mid] === target) return mid;
 
+    // skip duplicate 
+    if(arr[first]==arr[mid] && arr[mid]==arr[last]){
+     first++;
+     last--;
+     continue;
+    }
+
     // left sorted part
     if (arr[first] <= arr[mid]) {
 
@@ -36,4 +43,4 @@ let searchInRotatedArray = (arr, target) => {
 
 console.log(searchInRotatedArray([4, 5, 6, 7, 0, 1, 2, 3], 1));
 
-// TMC => O(logN) and SPC => O(1)
+// TMC(in Avg/Best case) => O(logN), and TMC(worst case) => O(n), SPC => O(1)
