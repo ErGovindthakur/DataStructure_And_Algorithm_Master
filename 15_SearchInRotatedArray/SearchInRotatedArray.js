@@ -29,7 +29,7 @@ let searchInRotatedArray = (arr, target) => {
 
     } else {
 
-      // left sorted part
+      // right sorted part
       if (target > arr[mid] && target <= arr[last]) {
         first = mid + 1;
       } else {
