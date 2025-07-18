@@ -206,3 +206,139 @@ parseInt("abc") // NaN
 Math.sqrt(-1)   // NaN
 
 ```
+
+
+### Here is full detailed exploration of js Operators
+
+#### ✅ 1. Arithmetic Operators
+| Operator | Description         | Example  | Output  |
+| -------- | ------------------- | -------- | ------- |
+| `+`      | Addition            | `5 + 3`  | `8`     |
+| `-`      | Subtraction         | `5 - 3`  | `2`     |
+| `*`      | Multiplication      | `5 * 3`  | `15`    |
+| `/`      | Division            | `6 / 3`  | `2`     |
+| `%`      | Modulus (remainder) | `5 % 2`  | `1`     |
+| `**`     | Exponentiation      | `2 ** 3` | `8`     |
+| `++`     | Increment           | `x++`    | Adds 1  |
+| `--`     | Decrement           | `x--`    | Minus 1 |
+✅ Use case: Calculators, game scores, loops
+
+#### ✅ 2. Assignment Operators
+| Operator | Example  | Meaning      |
+| -------- | -------- | ------------ |
+| `=`      | `x = 10` | Assign value |
+| `+=`     | `x += 2` | `x = x + 2`  |
+| `-=`     | `x -= 2` | `x = x - 2`  |
+| `*=`     | `x *= 2` | `x = x * 2`  |
+| `/=`     | `x /= 2` | `x = x / 2`  |
+| `%=`     | `x %= 2` | `x = x % 2`  |
+✅ Use case: Updating state or counters efficiently
+
+#### ✅ 3. Comparison Operators
+| Operator | Description               | Example     | Result  |
+| -------- | ------------------------- | ----------- | ------- |
+| `==`     | Equal (loose)             | `"5" == 5`  | `true`  |
+| `===`    | Strict equal (type+value) | `"5" === 5` | `false` |
+| `!=`     | Not equal                 | `5 != "5"`  | `false` |
+| `!==`    | Strict not equal          | `5 !== "5"` | `true`  |
+| `>`      | Greater than              | `6 > 5`     | `true`  |
+| `<`      | Less than                 | `6 < 5`     | `false` |
+| `>=`     | Greater or equal          | `5 >= 5`    | `true`  |
+| `<=`     | Less or equal             | `5 <= 3`    | `false` |
+✅ Use case: Conditions, filtering data
+
+#### ✅ 4. Logical Operators
+| Operator | Description | Example         | Result     |        |   |         |        |
+| -------- | ----------- | --------------- | ---------- | ------ | - | ------- | ------ |
+| `&&`     | Logical AND | `true && false` | `false`    |        |   |         |        |
+| \`       |             | \`              | Logical OR | \`true |   | false\` | `true` |
+| `!`      | Logical NOT | `!true`         | `false`    |        |   |         |        |
+
+```js
+let age = 20;
+if (age >= 18 && age < 60) {
+  console.log("Adult");
+}
+```
+✅ Use case: Authentication, form validation
+
+#### ✅ 5. Ternary Operator (?:)
+Shorthand for if...else
+```js
+let score = 85;
+let result = score >= 50 ? "Pass" : "Fail";
+```
+✅ Use case: Compact conditional assignment
+
+#### ✅ 6. Type Operators
+| Operator     | Description                  | Example                      |
+| ------------ | ---------------------------- | ---------------------------- |
+| `typeof`     | Returns the type of variable | `typeof "JS"` → string       |
+| `instanceof` | Checks object’s constructor  | `[] instanceof Array` → true |
+✅ Use case: Type checking, validation
+
+#### ✅ 7. Bitwise Operators (Advanced use)
+| Operator | Description | Example  | Result |     |     |
+| -------- | ----------- | -------- | ------ | --- | --- |
+| `&`      | AND         | `5 & 1`  | `1`    |     |     |
+| \`       | \`          | OR       | \`5    | 1\` | `5` |
+| `^`      | XOR         | `5 ^ 1`  | `4`    |     |     |
+| `~`      | NOT         | `~5`     | `-6`   |     |     |
+| `<<`     | Left shift  | `5 << 1` | `10`   |     |     |
+| `>>`     | Right shift | `5 >> 1` | `2`    |     |     |
+✅ Use case: Performance optimization, binary flags, hardware-level tasks
+
+
+#### ✅ 8. Nullish Coalescing (??)
+Returns right-hand value only if the left is null or undefined.
+```js
+let name = null;
+let username = name ?? "Guest"; // → "Guest"
+```
+✅ Use case: Default values when null or undefined
+
+#### ✅ 9. Optional Chaining (?.)
+Safely access deeply nested properties.
+```js
+let user = {};
+console.log(user.address?.city); // undefined, no error
+```
+✅ Use case: Avoiding runtime errors in nested objects
+
+#### ✅ 10. Spread & Rest Operators (...)
+```js
+let arr1 = [1, 2];
+let arr2 = [...arr1, 3, 4]; // Spread → [1, 2, 3, 4]
+
+function sum(...args) {     // Rest
+  return args.reduce((a, b) => a + b);
+}
+```
+✅ Use case: Merging arrays, collecting function arguments
+
+#### ✅ 11. Comma Operator (,)
+Allows multiple expressions in one line, but returns the last one.
+```js
+let x = (2 + 3, 4 + 5); // x = 9
+```
+✅ Use case: Rarely used; for one-liners or tricks
+
+#### ✅ 12. Delete Operator
+```js
+let obj = { name: "Govind" };
+delete obj.name; // Removes "name" property
+```
+✅ Use case: Remove properties from objects
+
+#### ✅ 13. in Operator
+```js
+"name" in { name: "Govind" } // true
+```
+✅ Use case: Check if a property exists in an object
+
+#### ✅ 14. typeof vs instanceof – Quick Recap
+```js
+typeof [1, 2, 3]        // "object"
+[1, 2, 3] instanceof Array // true
+```
+✅ Use case: Type detection logic
