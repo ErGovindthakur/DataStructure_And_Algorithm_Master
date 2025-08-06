@@ -10,7 +10,7 @@ for(let i = 1; i<=stars; i++){
                console.log("Plz enter odd number of stars for perfect x pattern");
                return;
           }
-           else if(i==j || i+j == stars+1){ // her is the main logic
+           else if(i==j || i+j == stars+1){ // here is the main logic
                process.stdout.write("*");
           }
           process.stdout.write(" ")
