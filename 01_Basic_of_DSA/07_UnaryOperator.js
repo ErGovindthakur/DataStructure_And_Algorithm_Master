@@ -13,6 +13,7 @@ console.log(c);
 
 
 let B = true;
+// console.log(B)
 B++;
 console.log(B);
 

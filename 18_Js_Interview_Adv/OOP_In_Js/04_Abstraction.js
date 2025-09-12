@@ -1,6 +1,6 @@
 // Exploring Abstraction in js
 
-// Abstraction => It means hiding the complex internal process from users which are actually not necessary for them , but providing a simplified interface to the the task easily, weather that task quite difficult behind the scene
+// Abstraction => It means hiding the complex internal process from users which are actually not necessary for them , but providing a simplified interface to the task easily, weather that task quite difficult behind the scene
 
 
 class coffeeMachine {
