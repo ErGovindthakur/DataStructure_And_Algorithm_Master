@@ -3,12 +3,12 @@
 
 let sumOfNaturalNum  = (n) => {
 
-     if(n===1) return n;
+     if(n>=5) return n;
 
-     return n+sumOfNaturalNum(n-1);
+     return n+sumOfNaturalNum(n+1);
 }
 
-console.log(sumOfNaturalNum(5));
+console.log(sumOfNaturalNum(1));
 
 
 let factOfNaturalNum  = (n) => {
