@@ -38,7 +38,7 @@ let findFibonacciRec = (n) => {
      for(let i = 0; i<n; i++){
           console.log(fib(i));
      }
-
+     return `Actual Fib value -> ${fib(n)}`;
 };
 
-findFibonacciRec(10);
+console.log(findFibonacciRec(2));
