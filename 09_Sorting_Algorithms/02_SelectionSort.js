@@ -12,6 +12,7 @@ let selectionSort = (arr) => {
       }
 
     }
+    // writing condition to avoid more iteration when array is already sorted
     if (min !== i) {
       let temp = arr[min];
       arr[min] = arr[i];
@@ -22,4 +23,4 @@ let selectionSort = (arr) => {
 };
 console.log(selectionSort([5, 2, 7, 8, 3, 9]));
 
-// TMC => O(n^2) and SPC => O(1)
+// TMC => O(n^2) , if array is already sorted in tmc O(n) and SPC => O(1)
