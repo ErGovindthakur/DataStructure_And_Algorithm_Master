@@ -1,20 +1,32 @@
-// Exploring insertion sort using js
+let insertionSort = (arr) => { //[ 4, 2, 1, 3, 5, 6 ]
+  let n = arr.length;
+  console.log("Initial Array:", arr);
 
-let arr = [4, 2, 1, 3, 5, 6];
-let n = arr.length;
+  for (let i = 1; i < n; i++) {
+    let key = arr[i];       // pick element to insert
+    let j = i - 1;          // compare with left elements
+    console.log(`\nPass ${i}: key = ${key}`);
 
-for (let i = 1; i < n; i++) {
-  let key = arr[i]; // storing each elem as key
-  let j = i - 1;
+    // shifting larger elements
+    while (j >= 0 && arr[j] > key) {
+      console.log(
+        `Comparing arr[${j}] = ${arr[j]} > key = ${key} ✅ -> shifting, but also look at j = ${j}`
+      );
+      arr[j + 1] = arr[j];
+      console.log("Array after shift:", arr);
+      j--;
+    }
 
-  while (j >= 0 && arr[j] > key) {
-    arr[j + 1] = arr[j];
-    j--;
+    console.log(
+      `Insert key = ${key} at position ${j + 1} (before: ${arr[j] ?? "start"})`
+    );
+    arr[j + 1] = key;
+
+    console.log("Array after inserting key:", arr);
   }
 
-  arr[j + 1] = key;
-}
+  console.log("\nFinal Sorted Array:", arr);
+  return arr;
+};
 
-console.log(arr);
-
-// TMC => O(m*n) = O(n^2) , where n may be negligible  and SPC => O(1)
+console.log(insertionSort([4, 2, 1, 3, 5, 6]));
