@@ -12,10 +12,10 @@ let findFrequency = (str) => {
 
     if (freq[char]) {
       freq[char] += 1;
-    }
-    if (!freq[char]) {
+    }else{
       freq[char] = 1;
     }
+    
   }
   return freq;
 };
