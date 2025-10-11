@@ -160,4 +160,36 @@ let findMajorityElem = (arr) => {
           return "No majority elem found ";
      }
 };
-console.log(findMajorityElem([1,3,1,2,2,3,3,3,3]));
+// console.log(findMajorityElem([1,3,1,2,2,3,3,3,3]));
+
+let TrappingRainWater = (heightArr) => {
+     let leftArr = new Array(heightArr.length);
+     let rightArr = new Array(heightArr.length);
+
+     let maxLeft = heightArr[0];
+     let maxRight = heightArr[heightArr.length -1];
+
+     leftArr[0] = maxLeft;
+     rightArr[rightArr.length-1] = maxRight;
+
+     for(let i = 1; i<leftArr.length; i++){
+          maxLeft = Math.max(heightArr[i],maxLeft)
+          leftArr[i] = maxLeft;   
+     }
+
+     for(let i = 0; i<rightArr.length-1; i++){
+          maxRight = Math.max(heightArr[i],maxRight);
+          rightArr[i] = maxRight;
+     }
+
+     let totalWater = 0;
+
+     for(let i = 0; i<heightArr.length; i++){
+          totalWater += Math.min(leftArr[i],rightArr[i]) - heightArr[i];
+     }
+     console.log(heightArr);
+     console.log(leftArr);
+     console.log(rightArr);
+     return totalWater;
+}
+console.log(TrappingRainWater([4,2,0,3,2,5]));
