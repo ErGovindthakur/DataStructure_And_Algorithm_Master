@@ -30,6 +30,25 @@ let findIntersection = (arr1, arr2) => {
   }
   return intersectionArr;
 };
-console.log(findIntersection([1, 2, 4, 5, 9,11], [2, 3, 5, 7,7,7,7,8,8,11]));
+// console.log(findIntersection([1, 2, 4, 5, 9,11], [2, 3, 5, 7,7,7,7,8,8,11]));
 
 // Note array must be sorted for finding intersection and union
+
+// Find the missing number from the given arr
+
+let findMissingNum = (arr) => {
+     if(arr.length<2)return arr;
+
+     let actualSum = 0;
+     let sum = 0;
+
+     for(let i = 0; i<arr.length; i++){
+          sum +=arr[i];
+     }
+     for(let i = 1; i<=arr[arr.length-1]; i++){
+          actualSum += i;
+     }
+
+     return actualSum - sum;
+}
+console.log("Missing Number => ",findMissingNum([1,2,4,5]));
