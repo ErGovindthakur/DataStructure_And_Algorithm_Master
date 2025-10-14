@@ -42,10 +42,13 @@ let findMissingNum = (arr) => {
      let actualSum = 0;
      let sum = 0;
 
+     // if array is unsorted take max elem to find actual sum
+     let max = Math.max(...arr);
+
      for(let i = 0; i<arr.length; i++){
           sum +=arr[i];
      }
-     for(let i = 1; i<=arr[arr.length-1]; i++){
+     for(let i = 1; i<=max; i++){
           actualSum += i;
      }
 
