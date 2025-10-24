@@ -1,25 +1,33 @@
 let sellAndBuyStock = (prices) => {
-     if(prices.length<=1)return"Take Prices of more than 2 days";
+  if (prices.length <= 1) return "Take Prices of more than 2 days";
 
-     let minPrice = prices[0];
-     let profit = 0;
-     let sellingPrice = 0;
-     let buyingPrice = 0;
+  let minPrice = prices[0];
+  let profit = 0;
+  let sellingDay = 0;
+  let buyingDay = 0;
 
-     for(let i = 1; i<prices.length; i++){
+  for (let i = 1; i < prices.length; i++) {
+    if (prices[i] < minPrice) {
+      minPrice = prices[i];
+      buyingDay = i;
+    }
 
-          if(prices[i]<minPrice){
-               minPrice = prices[i];
-               buyingPrice = i;
-          }
+    let maxProfit = prices[i] - minPrice;
 
-          let maxProfit = prices[i] - minPrice;
+    if (maxProfit > profit) {
+       profit = maxProfit;
+      sellingDay = i;
+     //  if (sellingDay < buyingDay) {
+     //    profit = 0;
+     //  }else{
+     //      profit = maxProfit;
+     //  }
+    }
+    console.log(`Profit -> ${profit}`)
+  }
+  if(profit == 0) return "Not profit is possible";
 
-          if(maxProfit>profit){
-               profit = maxProfit;
-               sellingPrice = i;
-          }
-     }
-     return `Product purchased at day ${buyingPrice} and sold at day ${sellingPrice} and profit ${prices[sellingPrice]- prices[buyingPrice]}`;
-}
-console.log(sellAndBuyStock([7,1,5,3,6,4]));
+  return `Product purchased at day ${buyingDay} and sold at day ${sellingDay} and profit ${profit}`;
+};
+console.log(sellAndBuyStock([7, 6, 4, 3, 1]));
+console.log(sellAndBuyStock([7, 6, 4, 3, 9]));
