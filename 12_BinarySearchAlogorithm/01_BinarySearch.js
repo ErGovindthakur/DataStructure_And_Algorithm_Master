@@ -1,5 +1,5 @@
 // Exploring binary search first time
-
+// Note for applying binary search at any array, must provide sorted array
 let binarySearch = (arr,target) => {
 
      let fIndex = 0;
