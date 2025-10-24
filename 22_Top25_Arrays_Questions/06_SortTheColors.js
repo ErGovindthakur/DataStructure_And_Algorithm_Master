@@ -4,8 +4,8 @@ let sortTheColors = (colors) => {
      let st = 0;
      let end = colors.length-1;
      let i = 0;// fast pointer
-     while(i<end){
-          if(colors[st]==0){
+     while(i<=end){
+          if(colors[i]==0){
                let temp = colors[i];
                colors[i] = colors[st];
                colors[st] = temp;
@@ -23,3 +23,4 @@ let sortTheColors = (colors) => {
      return colors;
 }
 console.log(sortTheColors([2,0,2,1,1,0]))
+console.log(sortTheColors([2,0,1]))
