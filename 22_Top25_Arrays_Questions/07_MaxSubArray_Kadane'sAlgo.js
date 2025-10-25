@@ -1,5 +1,10 @@
 let findMaxSubArray = (arr) => {
-     let maxSum = -Infinity;
+     // additional check points
+
+     if(!arr || arr.length===0)return 0;
+
+     // let maxSum = -Infinity;
+     let maxSum = arr[0]; // starts handling all the negative and positive sum
      let sum = 0;
      let n = arr.length;
 
