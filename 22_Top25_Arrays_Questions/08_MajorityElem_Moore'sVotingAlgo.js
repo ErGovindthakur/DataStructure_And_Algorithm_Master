@@ -1,8 +1,9 @@
 let findMajorityElem = (arr) => {
-     if(arr.length<2)return`No Majority elem found`;
+     if(arr.length==0)return`No Majority elem found`;
+     if(arr.length==1)return`The majority elm => ${arr[0]}`;
 
      let majorElem = arr[0];
-     let count = 0;
+     let count = 1;
 
      for(let i = 1; i<arr.length; i++){
           if(arr[i]==majorElem){
@@ -19,16 +20,15 @@ let findMajorityElem = (arr) => {
 
      }
 
-     count = 1;
-     let ans = majorElem;
+     count = 0;
 
-     for(let elem in arr){
-          if(elem==ans){
+     for(let elem of arr){
+          if(elem==majorElem){
                count++;
           }
      }
 
-     if(count>=Math.floor(arr.length/2)){
+     if(count>Math.floor(arr.length/2)){
           return `The majority elem => ${majorElem}`;
      }else{
           return `No majority elem found `;
