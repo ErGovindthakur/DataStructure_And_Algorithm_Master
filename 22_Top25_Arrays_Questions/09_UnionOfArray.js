@@ -6,18 +6,22 @@ let unionOfArray = (arr1, arr2) => {
   let j = 0;
 
   while (i < arr1.length && j < arr2.length) {
-    if (arr1[i] === arr2[j] && unionArr[unionArr.length - 1] !== arr1[i]) {
-      unionArr.push(arr1[i]);
+    if (arr1[i] === arr2[j]) {
+      if (unionArr.length === 0 || unionArr[unionArr.length - 1] !== arr1[i]) {
+        unionArr.push(arr1[i]);
+      }
       i++;
       j++;
-    } else if (arr1[i] < arr2[j] && unionArr[unionArr.length - 1] !== arr1[i]) {
-      unionArr.push(arr1[i]);
+    } else if (arr1[i] < arr2[j]) {
+      if (unionArr.length === 0 || unionArr[unionArr.length - 1] !== arr1[i]) {
+        unionArr.push(arr1[i]);
+      }
       i++;
       console.log("secondly executed");
     } else {
-      if (unionArr[unionArr.length - 1] !== arr2[j]) {
+      if (unionArr.length === 0 || unionArr[unionArr.length - 1] !== arr2[j]) {
         unionArr.push(arr2[j]);
-        console.log('Firstly executed');
+        console.log("Firstly executed");
       }
       j++;
     }
@@ -25,16 +29,16 @@ let unionOfArray = (arr1, arr2) => {
 
   // checking for remaining elem
   while (i < arr1.length) {
-    if (unionArr[unionArr.length - 1] !== arr1[i]) {
+    if (unionArr.length === 0 || unionArr[unionArr.length - 1] !== arr1[i]) {
       unionArr.push(arr1[i]);
-      i++;
-    }
+     }
+     i++;
   }
   while (j < arr2.length) {
-    if (unionArr[unionArr.length - 1] !== arr2[j]) {
+    if (unionArr.length === 0 || unionArr[unionArr.length - 1] !== arr2[j]) {
       unionArr.push(arr2[j]);
-      j++;
-    }
+     }
+     j++;
   }
   return unionArr;
 };
