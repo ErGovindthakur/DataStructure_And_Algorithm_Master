@@ -10,4 +10,20 @@ let findTheArrContainsDupElem = (arr) => {
      }
      return false;
 }
-console.log(findTheArrContainsDupElem([0,2,3,1,2]));
+// console.log(findTheArrContainsDupElem([0,2,3,1,2]));
+
+let findTheArrContainsDupElemByMap = (arr) => {
+     if(arr.length<1)return "No Dup elem is available";
+
+     let map = new Map();
+
+     for(let i = 0; i<arr.length; i++){
+          if(map.has(arr[i])){
+               return true;
+          }
+          map.set(arr[i],i);
+     }
+     return false;
+}
+
+console.log(findTheArrContainsDupElemByMap([1,2,3,1]));
