@@ -33,7 +33,7 @@ let TwoSum2 = (arr) => {
           }
           map.set(arr[i],i);
      }
-     return -1;
+     return [-1,-1];
 }
 // TMC => O(n), SPC => O(n);
 console.log(TwoSum2([2,7,11,15]));
