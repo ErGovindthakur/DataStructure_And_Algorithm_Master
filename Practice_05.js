@@ -112,4 +112,26 @@ let divide = (arr) => {
 
      return mergeArr(sortedLeft,sortedRight);
 }
-console.log(divide([3,7,9,1,2,4,6,8]))
+// console.log(divide([3,7,9,1,2,4,6,8]))
+
+// 5. quick sort
+
+let quickSort = (arr) => {
+
+     if(arr.length<=1)return arr;
+
+     let pivot = arr[arr.length-1];
+     let left = [];
+     let right = [];
+
+     for(let i = 0; i<arr.length; i++){
+          if(arr[i]<pivot){
+               left.push(arr[i]);
+          }
+          if(arr[i]>pivot){
+               right.push(arr[i]);
+          }
+     }
+     return [...quickSort(left),pivot,...quickSort(right)];
+}
+console.log(quickSort([3,7,9,1,2,4,6,8]))
