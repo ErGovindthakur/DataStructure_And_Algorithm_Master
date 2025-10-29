@@ -124,11 +124,10 @@ let quickSort = (arr) => {
      let left = [];
      let right = [];
 
-     for(let i = 0; i<arr.length; i++){
+     for(let i = 0; i<arr.length-1; i++){
           if(arr[i]<pivot){
                left.push(arr[i]);
-          }
-          if(arr[i]>pivot){
+          }else{
                right.push(arr[i]);
           }
      }
