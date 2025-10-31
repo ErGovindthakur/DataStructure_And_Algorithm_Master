@@ -1,22 +1,25 @@
 let groupAnagrams = (arr) => {
-  if (arr.length === 0) return [];
+     if(arr.length === 0) return [];
 
-  let map = new Map();
+     let map = new Map(); // map creation for getting key and value
 
-  for (let word of arr) {
-    let sorted = word.split("").sort().join("");
+     // traverse over whole array
+     for(let i = 0; i<arr.length; i++){
+          // sorting each array elem to get perfect keys in sorted order
+          // let sorted = arr[i].split("");
+          // let sorted = arr[i].split("").sort();
+          let sorted = arr[i].split("").sort().join();
 
-    // If key not in map, add it
-    if (!map.has(sorted)) {
-      map.set(sorted, []);
-    }
 
-    // Push the original word into its group
-    map.get(sorted).push(word); // let me know how's this working
-  }
+          // check if map contains particular key or not
 
-  // Convert Map values to array
-  return Array.from(map.values());
-};
+          if(!map.has(sorted)){
+               map.set(sorted,[]);
+          }
+          map.get(sorted).push(arr[i]);
 
+     }
+     // return map.values();
+     return Array.from(map.values())
+}
 console.log(groupAnagrams(["eat", "tea", "tan", "ate", "nat", "bat"]));
