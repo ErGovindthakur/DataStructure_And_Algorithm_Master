@@ -9,6 +9,11 @@ let sortThePeople = (names,ages) => {
 
      combine.sort((a,b)=>b[0]-a[0]);
 
+     // for experiment purpose
+     // for(let i = 0; i<ages.length; i++){
+     //      console.log(combine[i][1]);
+     // }
+
 
      return combine.map((val,idx)=>val[1]);
 
