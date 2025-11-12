@@ -1,9 +1,15 @@
 let pascalTriangle = (numRows) => {
   let row = [1];
+  let newRow = [];
 
   for (let i = 0; i < numRows; i++) {
     // print current row
-    console.log(row.join(" "));
+//     console.log(row.join(" "));
+
+    // debugging
+    // console.log("Row -> ", row);
+
+    newRow.push([...row]);
 
     // build next row from the end
     for (let j = row.length - 1; j > 0; j--) {
@@ -11,6 +17,7 @@ let pascalTriangle = (numRows) => {
     }
     row.push(1); // add 1 at the end for next row
   }
+  return newRow;
 };
 
-pascalTriangle(5);
+console.log(pascalTriangle(5));
