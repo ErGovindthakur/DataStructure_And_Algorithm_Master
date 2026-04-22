@@ -1,31 +1,64 @@
+import readline from "node:readline/promises"; // Use promise-based readline
 import { stdin, stdout } from "node:process";
-import readline from "node:readline";
+import { randomInt } from "node:crypto"; // Secure random numbers
 
-const rl = readline.createInterface({
-  input: stdin,
-  output: stdout,
-});
+// Note : string.padStart();
 
-// let myNum = 123;
-// let padNum = myNum.toString().padStart(5,2);
-// console.log("PadNum ", padNum);
+let num = 123;
+let strNumPad = num.toString().padStart(6,0);
+console.log("strNumPad", strNumPad);
 
-// " Note => .padStart(6,0) , here (6 ensures that generated number is always six digit, but if not 6 digit num it automatically fill with 0), and it's always apply over string"
 
-// Fix: Use padStart to ensure it's always 6 characters, even if it starts with 0
-const otp = Math.floor(Math.random() * 1000000).toString().padStart(6, "0");
+// 1. Configuration Constants
+const OTP_LENGTH = 6;
+const MAX_ATTEMPTS = 3;
 
-console.log("System Generated OTP:", otp);
-
-const validateOtp = (userInput) => {
-  if (userInput === otp) {
-    console.log("Welcome Mr ABC");
-  } else {
-    console.log("Access Denied: Incorrect OTP.");
-  }
-  rl.close();
+/**
+ * Generates a cryptographically secure numeric OTP
+ */
+const generateSecureOtp = (length) => {
+  // randomInt generates a cryptographically strong integer
+  const min = Math.pow(10, length - 1);
+  console.log("MIN : ", min); // here we will get : 10^len-1 <=> 10^5 = 100,000
+  const max = Math.pow(10, length) - 1;
+  console.log("MAX : ", max); // here we will get : (10^len)-1 <=> 10^6 - 1 = 999,999 
+  return randomInt(min, max + 1).toString(); // here randomInt(min, max+1), pick any value btw ("min, max+1")
 };
 
-rl.question("Enter your 6-digit otp: ", (answer) => {
-  validateOtp(answer);
-});
+/**
+ * Main App Logic
+ */
+async function startAuth() {
+  const rl = readline.createInterface({ input: stdin, output: stdout });
+  const secretOtp = generateSecureOtp(OTP_LENGTH);
+  let attempts = 0;
+
+  // Logging for demo (In production, you'd send this via SMS/Email)
+  console.log(`[DEV ONLY] OTP Sent: ${secretOtp}`);
+
+  try {
+    while (attempts < MAX_ATTEMPTS) {
+      const remaining = MAX_ATTEMPTS - attempts;
+      const answer = await rl.question(`Enter your OTP (${remaining} attempts left): `);
+
+      if (answer.trim() === secretOtp) {
+        console.log("✅ Access Granted. Welcome!");
+        return;
+      }
+
+      attempts++;
+      if (attempts < MAX_ATTEMPTS) {
+        console.log("❌ Incorrect OTP. Please try again.");
+      }
+    }
+
+    console.error("🚫 Account Locked: Too many failed attempts.");
+  } catch (err) {
+    console.error("An unexpected error occurred:", err.message);
+  } finally {
+    rl.close();
+  }
+}
+
+startAuth();
+
