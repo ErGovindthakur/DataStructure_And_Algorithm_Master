@@ -28,7 +28,7 @@ console.log("Area = ", area, "\n","Perimeter = ",perimeter);
 // 2. Generate OTP of 6 digit
 
 let sixDigitOtp = Math.floor(Math.random()*999999);
-console.log(sixDigitOtp);
+console.log("OTP : ",sixDigitOtp);
 
 // 3. Find the area of right angle triangle
 
