@@ -1,7 +1,7 @@
 // Exploring basics of loop in js
 
 /*
-Loop (Iterative statement) -: It is the process in process in programming language to do repeated task using a single statement called loop or iterative statement
+Loop (Iterative statement) -: It is the process in programming language to do repeated task using a single statement called loop or iterative statement
 */
 
 // Printing 3 times "Govind" 

@@ -11,7 +11,7 @@ More than 9000 |  20%
 
 Discount formula
 
-Discounted Price (Payable price) = Actual Price - (ActualPrice * discount)/100
+Discounted Price (Payable price) = Actual Price - (ActualPrice * discountPercentage)/100
 */
 
 let actualAmount = 7000;
