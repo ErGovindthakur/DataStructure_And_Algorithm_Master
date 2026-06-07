@@ -11,3 +11,7 @@ console.log(12 >= 12 && 12==12);
 
 console.log(12<12 || 12==12);
 
+
+// 3. Logical ! (not) operator => it gives output as if the given value is false but if given value is true output will be false
+
+console.log(!(true))

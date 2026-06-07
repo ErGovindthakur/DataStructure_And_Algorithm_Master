@@ -22,10 +22,17 @@ let num = 12;
 let string = "12";
 console.log(num+string); // 1212 Here concatenation is occurring
 
-// Below the three console are working differently
-console.log("Here is the sum of two number = "+ num1+num2);
-console.log("Here is the sum of two number = ", num1+num2);
-console.log("Here is the sum of two number = "+ (num1+num2));
+// Below the three console are working differently (since it works left to right due to BODMAS Rules)
+// console.log("Here is the sum of two number = "+ num1+num2);
+// console.log("Here is the sum of two number = ", num1+num2);
+// console.log("Here is the sum of two number = "+ (num1+num2));
+let log1 = "Here is the sum of two number = "+ num1+num2; // directly converted into string
+console.log(`${log1} and it's type is ${typeof(log1)}`);
+let log2 = ("Here is the sum of two number = ", num1+num2); // it only takes value after comma, doesn't perform any conversion by default;
+console.log(`${log2} and it's type is ${typeof(log2)}`);
+
+let log3 = ("Here is the sum of two number = "+ (num1+num2)); // here it also perform concatenation, and converted into string.
+console.log(`${log3} and it's type is ${typeof(log3)}`);
 
 // Type Coercion (Bcz of type coercion js do some calculation according to operators automatically)
 

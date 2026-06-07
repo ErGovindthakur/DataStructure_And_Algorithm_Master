@@ -13,7 +13,9 @@ console.log(c);
 
 
 let B = true;
+// console.log(B)
 B++;
+++B;
 console.log(B);
 
 // Note => Can't apply unary operator at constant
