@@ -5,10 +5,8 @@ let removeDupLetters = (letters) => {
   let arrLetter = [];
 
   for (let i = 0; i < letters.length; i++) {
-    if (arrLetter.includes(letters[i])) {
-      i++;
-    } else {
-      arrLetter.push(letters[i]);
+    if (!arrLetter.includes(letters[i])) {
+      arrLetter.push(letters[i])
     }
   }
   return arrLetter.join("");
@@ -16,3 +14,24 @@ let removeDupLetters = (letters) => {
 // TMC = O(n^2) and SPC = O(n)
 // console.log(removeDupLetters("cab"))
 console.log(removeDupLetters("cbacdcbc"));
+
+
+let removeDupLetter2 = (letter) => {
+  if(letter.length<2)return letter;
+
+  letter = letter.split("").sort(); // sorting takes O(nlogn) time
+
+  let seen = new Set(); // here is an space created
+  let result = []; // here is also space created
+
+  for(let alp of letter){ // here loop runs "n times",
+    if(!seen.has(alp)){
+      seen.add(alp); // here look up occurs in constant time
+      result.push(alp);
+    }
+  }
+
+  return result.join("");
+}
+// Overall TMC = 
+console.log(removeDupLetter2("abbcdacb"))
