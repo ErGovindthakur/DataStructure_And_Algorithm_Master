@@ -33,5 +33,5 @@ let removeDupLetter2 = (letter) => {
 
   return result.join("");
 }
-// Overall TMC = 
+// Overall TMC = O(nlogn) and SPC = O(n)
 console.log(removeDupLetter2("abbcdacb"))
