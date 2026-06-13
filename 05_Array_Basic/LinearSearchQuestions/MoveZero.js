@@ -24,13 +24,16 @@ let moveZero = (arr) => {
                arr[j] = arr[i];
                arr[i] = temp;
                j++;
-               console.log("j before minus: ",j)
+               // console.log("j before minus: ",j)
                if(arr[j-1]===0){
                     j--; // here is the whole game
                }
-               console.log("j after minus: ",j)
+               // console.log("j after minus: ",j)
+          }else{
+               j++;
           }
      }
      return arr;
 }
 console.log(moveZero([0,1,0,3,12]))
+console.log(moveZero([1,0,1]))
