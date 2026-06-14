@@ -1,0 +1,53 @@
+// Practicing all basic array problems
+
+
+// 1. Remove duplicate elem 
+
+let removeDupElem = (arr) => {
+     let j = 0;
+     let n = arr.length;
+     for(let i = 0; i<n; i++){
+          if(arr[i]!==arr[j]){
+               j++;
+               let temp = arr[i];
+               arr[i] = arr[j];
+               arr[j] = temp;
+          }
+     }
+     return arr.slice(0,j+1);
+}
+// console.log(removeDupElem([0,0,1,1,1,2,2,3,3,4,5,5]));
+
+// 2. Remove Elem
+
+let removeElem  = (arr,elem) => {
+     let st = 0;
+     let end = arr.length-1;
+
+     // method 1
+
+     // while(st<end){
+     //      if(arr[st]!==elem){
+     //           st++;
+     //      }
+     //      if(arr[end]===elem){
+     //           end--;
+     //      }
+     //      if(arr[st]===elem && arr[end]!==elem){
+     //           arr[st] = arr[end]
+     //           st++;
+     //           end--;
+     //      }
+     // }
+
+     // method 2
+     for(let i = 0; i<arr.length; i++){
+          if(arr[i]!==elem){
+               arr[st] = arr[i];
+               st++;
+          }
+     }
+     return arr.slice(0,st+1);
+}
+console.log(removeElem([0,1,2,2,3,0,4,2],2));
+console.log(removeElem([3,2,2,3],3))
