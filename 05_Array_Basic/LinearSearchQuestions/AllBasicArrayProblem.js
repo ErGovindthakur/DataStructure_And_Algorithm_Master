@@ -70,5 +70,39 @@ let bstTimeToBuyAndSellStocks = (arr) => {
      }
      return maxProfit;
 }
-console.log(bstTimeToBuyAndSellStocks([3,1,5,2,6,4]));
-console.log(bstTimeToBuyAndSellStocks([7,1,5,3,6,9]))
+// console.log(bstTimeToBuyAndSellStocks([3,1,5,2,6,4]));
+// console.log(bstTimeToBuyAndSellStocks([7,1,5,3,6,9]))
+
+// 4. Merge sorted array inPlace
+
+let mergeSortedArrayInPlace = (arr1,m,arr2,n) => {
+     // Note : here m and n are the numbers of non-zero elem
+
+     let i = m-1;
+     let j = n-1;
+     let k = m+n-1;
+
+     console.log("Initially : i,j,k ",i,j,k)
+     while(i>0 && j>0){
+          if(arr1[i]>arr2[j]){
+               arr1[k--] = arr1[i--];
+          }else{
+               arr1[k--] = arr2[j--];
+          }
+          console.log("Inside a 1st while Loop : i,j,k ",i,j,k)
+     }
+
+     while(i>0){
+          console.log("Inside a 2nd while Loop : i,j,k ",i,j,k)
+          arr1[k--] = arr1[i--];
+     }
+
+     while(j>0){
+          console.log("Inside a 3rd while Loop : i,j,k ",i,j,k)
+          arr1[k--] = arr2[j--]
+     }
+     return arr1;
+}
+console.log(mergeSortedArrayInPlace([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3));
+// console.log(mergeSortedArrayInPlace([1], 1, [0], 0));
+// console.log(mergeSortedArrayInPlace([1], 1, [], 0));
