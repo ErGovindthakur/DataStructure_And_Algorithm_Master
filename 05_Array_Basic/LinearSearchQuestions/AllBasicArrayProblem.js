@@ -103,6 +103,30 @@ let mergeSortedArrayInPlace = (arr1,m,arr2,n) => {
      }
      return arr1;
 }
-console.log(mergeSortedArrayInPlace([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3));
+// console.log(mergeSortedArrayInPlace([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3));
 // console.log(mergeSortedArrayInPlace([1], 1, [0], 0));
 // console.log(mergeSortedArrayInPlace([1], 1, [], 0));
+
+// 5. Solving find the single number problem
+
+let findSingleNum = (arr) => {
+     let freq = {};
+
+     for(let i = 0; i<arr.length; i++){
+          let elem = arr[i];
+          if(freq[elem]){
+               freq[elem] += 1;
+          }else{
+               freq[elem] = 1;
+          }
+     }
+
+     // applying loop over obj
+     for(let key in freq){
+          if(freq[key]===1){
+               return Number(key)
+          }
+     }
+     return -1;
+}
+console.log(findSingleNum([1,1,4,3,3,5,4]));
