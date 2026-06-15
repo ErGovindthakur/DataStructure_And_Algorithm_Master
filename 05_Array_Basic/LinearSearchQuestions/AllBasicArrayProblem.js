@@ -49,5 +49,26 @@ let removeElem  = (arr,elem) => {
      }
      return arr.slice(0,st+1);
 }
-console.log(removeElem([0,1,2,2,3,0,4,2],2));
-console.log(removeElem([3,2,2,3],3))
+// console.log(removeElem([0,1,2,2,3,0,4,2],2));
+// console.log(removeElem([3,2,2,3],3))
+
+// 3. Best time to buy and sell stock
+
+let bstTimeToBuyAndSellStocks = (arr) => {
+     let maxProfit = 0;
+     let minPrice = arr[0];
+
+     for(let i = 1; i<arr.length; i++){
+          if(arr[i]<minPrice){
+               minPrice = arr[i];
+          }
+          let profit = arr[i] - minPrice;
+
+          if(profit>maxProfit){
+               maxProfit = profit;
+          }
+     }
+     return maxProfit;
+}
+console.log(bstTimeToBuyAndSellStocks([3,1,5,2,6,4]));
+console.log(bstTimeToBuyAndSellStocks([7,1,5,3,6,9]))
