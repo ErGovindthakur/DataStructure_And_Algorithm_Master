@@ -135,26 +135,28 @@ let sortTheColor = (arr) => {
   let n = arr.length;
 
   if (n < 2) return arr;
-  let st = 0;
-  let end = n - 1;
-  console.log(arr[st],arr[end])
-  return;
-  while (st <= end) {
-    if (arr[st] === 0) {
-      st++;
-    }
-    if (arr[end] === 2) {
-      end--;
-    }
 
-    if (arr[st] === 2 && arr[end] === 0) {
-      let temp = arr[st];
-      arr[st] = arr[end];
-      arr[end] = temp;
-      st++;
-      end--;
-    }
+  let i = 0;
+  let j = 0;
+  let k = n-1;
+  while (i <= k) {
+     if(arr[i]===0){ // 1. here dealing with zero and swapping with j "slow pointer"
+          let temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+          i++;
+          j++;
+     }else if(arr[i]===1){
+          i++; // 2. Here fasting the 'i' pointer if getting 1
+     }else{
+          let temp = arr[k]; // here actually getting 2 and swapping with last elem
+          arr[k] = arr[i];
+          arr[i] = temp;
+          k--;
+     }
   }
   return arr;
 };
 console.log(sortTheColor([2, 0, 2, 1, 1, 0]));
+console.log(sortTheColor([1,0,1,2,0,0,1,2]))
+console.log(sortTheColor([2, 0, 1]));
