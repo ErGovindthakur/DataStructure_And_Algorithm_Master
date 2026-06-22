@@ -153,5 +153,28 @@ let removeElem = (arr,elem) => {
      }
      return arr;
 }
-console.log(removeElem([1,4,3,8,2,0],8));
-console.log(removeElem([3,2,2,3],3))
+// console.log(removeElem([1,4,3,8,2,0],8));
+// console.log(removeElem([3,2,2,3],3));
+
+// 9. Find single number in the array
+
+let findSingleNum = (arr) => {
+     let freq = {};
+
+     for(let i = 0; i<arr.length; i++){
+          let elem = arr[i];
+          if(!freq[elem]){
+               freq[elem] = 1;
+          }else{
+               freq[elem] += 1;
+          }
+     }
+
+     for(let key in freq){
+          if(freq[key]==1){
+               return Number(key)
+          }
+     }
+     return null;
+}
+console.log(findSingleNum([1,3,2,1,5,5,4,2,7,4,7,3,9]))
