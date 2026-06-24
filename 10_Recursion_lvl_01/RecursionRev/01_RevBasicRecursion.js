@@ -144,4 +144,41 @@ findSumOfNums(5) => 5 +  findSumOfNums(5-1) => 5 + 10 => 15
 */
 
 // tmc => O(n) (I have confusion), spc => O(n)
-console.log(findSumOfNums(5));
+// console.log(findSumOfNums(5));
+
+// 9. find sum of all numbers in an array
+
+let findArrSum = (arr,n) => {
+  if(n<=0) return arr[n];
+
+  return arr[n]+findArrSum(arr,n-1);
+}
+/*
+Dry Run 
+Step 1: (function building)
+
+1.findArrSum(arr,4) =>  arr[4] + findArrSum(arr,3)
+
+2.findArrSum(arr,3) => arr[3] + findArrSum(arr,2)
+
+3.findArrSum(arr,2) => arr[2] + findArrSum(arr,1)
+
+4.findArrSum(arr,1) => arr[1] + findArrSum(arr,0)
+
+5.findArrSum(arr,0) => arr[0] = 1 (base case reached)
+
+Step 2: (function unwinding)
+5.findArrSum(arr,0) => arr[0] = 1
+
+4.findArrSum(arr,1) => arr[1] + findArrSum(arr,0) => 2 + 1 => 3
+
+3.findArrSum(arr,2) => arr[2] + findArrSum(arr,1) => 3 + 3 => 6
+
+2.findArrSum(arr,3) => arr[3] + findArrSum(arr,2) => 4 + 6 => 10
+
+1.findArrSum(arr,4) =>  arr[4] + findArrSum(arr,3) => 5 + 10 => 15
+
+*/
+
+// tmc => O(n), // spc => O(n)
+console.log(findArrSum([1,2,3,4,5],4));
