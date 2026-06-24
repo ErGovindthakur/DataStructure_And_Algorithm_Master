@@ -181,4 +181,11 @@ Step 2: (function unwinding)
 */
 
 // tmc => O(n), // spc => O(n)
-console.log(findArrSum([1,2,3,4,5],4));
+// console.log(findArrSum([1,2,3,4,5],4));
+
+let findFactorial = (arr,n) => {
+  if(n<=0) return arr[n];
+
+  return arr[n]*findFactorial(arr,n-1);
+}
+console.log(findFactorial([1,2,3,4,5],4))
