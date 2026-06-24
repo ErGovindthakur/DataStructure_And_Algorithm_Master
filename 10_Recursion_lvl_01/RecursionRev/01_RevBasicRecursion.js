@@ -146,7 +146,7 @@ findSumOfNums(5) => 5 +  findSumOfNums(5-1) => 5 + 10 => 15
 // tmc => O(n) (I have confusion), spc => O(n)
 // console.log(findSumOfNums(5));
 
-// 9. find sum of all numbers in an array
+// 9. find sum of all numbers in an array using recursion
 
 let findArrSum = (arr,n) => {
   if(n<=0) return arr[n];
@@ -182,6 +182,8 @@ Step 2: (function unwinding)
 
 // tmc => O(n), // spc => O(n)
 // console.log(findArrSum([1,2,3,4,5],4));
+
+// 10 . find factorial of a number using recursion
 
 let findFactorial = (arr,n) => {
   if(n<=0) return arr[n];
