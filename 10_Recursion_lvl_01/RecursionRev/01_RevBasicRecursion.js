@@ -79,4 +79,28 @@ let fibonacciRec = (n) => {
 
      return fibonacciRec(n-1) + fibonacciRec(n-2);
 }
+/* 
+Generally Recursive function follow two steps 
+
+step 1: (Go downward and build stack of function into it's own smaller part)
+
+f(6) => f(5) + f(4)
+
+f(5) => f(4) + f(3)
+
+f(4) => f(3) + f(2)
+
+f(3) => f(2) + f(1)
+
+f(2) => f(1) + f(0)
+
+
+step 2: (come upward pop the function from stack and return value )
+
+f(2) => 1 + 0 => 1
+f(3) => 1 + 1 => 2
+f(4) => 2 + 1 => 3
+f(5) => 3 + 2 => 5
+f(6) => 5 + 3 => 8 (function break call stack becomes empty)
+*/
 console.log(fibonacciRec(6));
