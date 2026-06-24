@@ -72,7 +72,7 @@ let findFibonacciNum = (n) => {
 };
 // console.log(findFibonacciNum(6));
 
-// find fibonacci using recursion
+// 7. find fibonacci using recursion
 
 let fibonacciRec = (n) => {
      if (n<=1) return n;
@@ -103,4 +103,45 @@ f(4) => 2 + 1 => 3
 f(5) => 3 + 2 => 5
 f(6) => 5 + 3 => 8 (function break call stack becomes empty)
 */
-console.log(fibonacciRec(6));
+// console.log(fibonacciRec(6));
+
+// 8. find sum of "n" numbers in recursion
+
+let findSumOfNums = (n) => {
+  if(n<=1)return n;
+
+  return n + findSumOfNums(n-1);
+}
+/*
+Dry Run 
+step 1: function building
+findSumOfNums(5)
+=
+5 + findSumOfNums(4)
+
+findSumOfNums(4)
+=
+4 + findSumOfNums(3)
+
+findSumOfNums(3)
+=
+3 + findSumOfNums(2)
+
+findSumOfNums(2)
+=
+2 + findSumOfNums(1)
+
+findSumOfNums(1)
+=
+1   ← Base Case
+
+step 2: function unwinding (returns value)
+findSumOfNums(1) => 1 + findSumOfNums(1-1) => 1 + 1 => 2
+findSumOfNums(2) => 2 + findSumOfNums(2-1) => 2 + 1 => 3
+findSumOfNums(3) => 3 + findSumOfNums(3-1) => 3 + 3 => 6
+findSumOfNums(4) => 4 + findSumOfNums(4-1) => 4 + 6 => 10
+findSumOfNums(5) => 5 +  findSumOfNums(5-1) => 5 + 10 => 15
+*/
+
+// tmc => O(n) (I have confusion), spc => O(n)
+console.log(findSumOfNums(5));
