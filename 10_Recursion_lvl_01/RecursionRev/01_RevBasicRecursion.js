@@ -74,7 +74,11 @@ let findFibonacciNum = (n) => {
 // 7. find fibonacci using recursion
 
 let fibonacciRec = (n) => {
-  if (n <= 1) return n;
+  // if (n === 1) return 1;
+  // if(n === 0) return 0;
+
+  // Note combination of both above 
+  if(n<=1)return n;
 
   return fibonacciRec(n - 1) + fibonacciRec(n - 2);
 };
@@ -102,7 +106,7 @@ f(4) => 2 + 1 => 3
 f(5) => 3 + 2 => 5
 f(6) => 5 + 3 => 8 (function break call stack becomes empty)
 */
-// console.log(fibonacciRec(6));
+console.log(fibonacciRec(6));
 
 // 8. find sum of "n" numbers in recursion
 
