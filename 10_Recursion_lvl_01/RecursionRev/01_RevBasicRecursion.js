@@ -44,13 +44,12 @@ let printNumViaTrick = (n) => {
 
 // 5. find the sum of n numbers using recursion
 
-let sum = 0;
+
 let findSum = (n) => {
-  if (n > 9) return;
-  sum += n;
-  findSum(++n);
+  if (n === 9) return n;
+  return n+findSum(n+1);
 };
-// findSum(1);
+console.log(findSum(1));
 // console.log(sum);
 
 // 6. find fibonacci number using simple loop
@@ -75,10 +74,10 @@ let findFibonacciNum = (n) => {
 // 7. find fibonacci using recursion
 
 let fibonacciRec = (n) => {
-     if (n<=1) return n;
+  if (n <= 1) return n;
 
-     return fibonacciRec(n-1) + fibonacciRec(n-2);
-}
+  return fibonacciRec(n - 1) + fibonacciRec(n - 2);
+};
 /* 
 Generally Recursive function follow two steps 
 
@@ -108,10 +107,10 @@ f(6) => 5 + 3 => 8 (function break call stack becomes empty)
 // 8. find sum of "n" numbers in recursion
 
 let findSumOfNums = (n) => {
-  if(n<=1)return n;
+  if (n <= 1) return n;
 
-  return n + findSumOfNums(n-1);
-}
+  return n + findSumOfNums(n - 1);
+};
 /*
 Dry Run 
 step 1: function building
@@ -148,11 +147,11 @@ findSumOfNums(5) => 5 +  findSumOfNums(5-1) => 5 + 10 => 15
 
 // 9. find sum of all numbers in an array using recursion
 
-let findArrSum = (arr,n) => {
-  if(n<=0) return arr[n];
+let findArrSum = (arr, n) => {
+  if (n <= 0) return arr[n];
 
-  return arr[n]+findArrSum(arr,n-1);
-}
+  return arr[n] + findArrSum(arr, n - 1);
+};
 /*
 Dry Run 
 Step 1: (function building)
@@ -185,9 +184,24 @@ Step 2: (function unwinding)
 
 // 10 . find factorial of a number using recursion
 
-let findFactorial = (arr,n) => {
-  if(n<=0) return arr[n];
+let findFactorial = (n) => {
+  if (n <= 0) return 1;
 
-  return arr[n]*findFactorial(arr,n-1);
-}
-console.log(findFactorial([1,2,3,4,5],4))
+  return n * findFactorial(n - 1);
+};
+console.log(findFactorial(5));
+
+// 11. find if the given is power of two or not
+
+let findPowerOfTwo = (n) => {
+  if (n == 1) {
+    return true;
+  } else if (n <= 0 || n % 2 !== 0) {
+    return false;
+  }
+
+  n = Math.floor(n / 2);
+
+  return findPowerOfTwo(n);
+};
+// console.log(findPowerOfTwo(8));
