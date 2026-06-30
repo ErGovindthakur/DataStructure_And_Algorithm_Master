@@ -6,10 +6,10 @@ let selectionSort = (arr) => {
   // loop 1, helps to select minimum value
 
   for (let i = 0; i < n; i++) {
-    let min = arr[0];
+    let min = i;
 
     for (let j = i + 1; j < n; j++) {
-      if (arr[j] < min) {
+      if (arr[j] < arr[min]) {
         min = j; // here we will get min value
       }
     }
