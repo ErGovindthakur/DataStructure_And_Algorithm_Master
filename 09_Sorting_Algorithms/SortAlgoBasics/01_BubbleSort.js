@@ -1,12 +1,13 @@
 let bubbleSort = (arr) => {
   let n = arr.length;
 
-  // this optimization line
-  let isSorted = true;
   for (let i = 0; i < n; i++) {
+       // this optimization line
+       let isSorted = true;
+
     // console.log(`Pass : ${i}`,arr)
 
-    for (let j = 0; j < n - i; j++) {
+    for (let j = 0; j < n - i-1; j++) {
       if (arr[j] > arr[j + 1]) {
         let temp = arr[j];
         arr[j] = arr[j + 1];
@@ -16,7 +17,6 @@ let bubbleSort = (arr) => {
     }
 
     if (isSorted) {
-      console.log("Array already sorted : ");
       break;
     }
   }
